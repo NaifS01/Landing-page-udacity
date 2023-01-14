@@ -1,0 +1,162 @@
+body {
+    background: rgb(136,203,171);
+    background: linear-gradient(0deg, rgba(136,203,155,1) 0%, rgba(0,13,60,1) 100%);
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #fff;
+
+}
+
+html{ 
+    scroll-behavior: smooth;
+}
+
+.container{ 
+display: grid; 
+grid-template-rows: 100px 900px 900px 900px 900px; 
+
+grid-template-areas: "nav nav nav nav nav" 
+    "con con con con con"
+    "e con2 con2 con2 con2"
+    "con3 con3 con3 con3 con3"
+    "e1 e1 e1 con4 con4"
+;
+grid-template-columns: 750px; 
+grid-gap: 20px;
+} 
+
+.nav{ 
+    grid-area: nav;
+    top: 0;
+    background-color: #fff;
+  
+
+}
+.section_1{ 
+grid-area: con;
+width: 50%;
+}
+.section_2{ 
+    grid-area: con2;
+    width: 100%;
+    }
+    .section_3{ 
+        grid-area: con3;
+        width: 50%;
+        
+        }
+        .section_4{ 
+            grid-area: con4;
+            width: 100%;
+            }
+          h1{ 
+            font-size: 50px;
+      }
+
+      .activeSection{ 
+        
+        background-color: rgb(140, 149, 248);
+        padding: 20px;
+        height: 50%;
+        animation: rotate 8s linear 0s infinite forwards;
+        margin-right: 20px;
+      }
+
+
+      .nav-x{ 
+        list-style-type: none;
+        display: flex;
+        flex-direction: row-reverse;
+    
+      
+      }
+      a{ 
+            text-decoration: none;
+            color: rgb(232, 233, 237);
+      }
+      li { 
+       margin:20px;
+        padding: 10px;
+       border-radius: 3px;
+        cursor: pointer;
+        background-color: black;
+      }
+
+     
+      .sticky { 
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #fff;
+z-index: 1;
+        width: 100%;
+
+      }
+
+      .active{ 
+        background-color: rgb(79, 79, 135);
+      }
+      @keyframes rotate {
+        from {
+            transform: rotate(0deg)
+                       translate(-1em)
+                       rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg)
+                       translate(-1em) 
+                       rotate(-360deg);
+        }
+    }
+    @media only screen and (max-width: 768px){ 
+        .container{ 
+            
+            height: 100%;
+            display: grid;
+            grid-template-rows:100px 800px 700px 700px 700px ;
+            grid-template-columns: 100px;
+            grid-template-areas: 'nav nav nav'
+            "con con con" 
+            "con2 con2 con2" 
+            "con3 con3 con3"
+            "con4 con4 con4" 
+        
+        
+            ;
+            grid-gap: 20px;
+             
+            /* grid-template-columns: 300px 200px; */
+        
+        
+        }
+        .nav-x{ 
+            display: flex;
+            flex-direction: row !important;
+            justify-content: flex-start;
+            width: 100%;
+            height: 50%;
+          
+        }
+        .nav{ 
+            grid-area: nav;
+        font-size: 8px;
+      
+            width: 100%;
+            
+            top: 0;
+        }
+        .activeSection{ 
+        
+            background-color: rgb(140, 149, 248);
+            
+            height: 100%;
+            width: 100%;
+            margin-right: 20px;
+          }
+    
+    }
+    
+    
+
+
+   
